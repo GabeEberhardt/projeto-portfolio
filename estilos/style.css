@@ -276,6 +276,25 @@ article h2 {
   color: var(--texto-inverso);
 }
 
+.btn-curriculo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+  padding: 10px 16px;
+  border-radius: 5px;
+  background-color: var(--destaque);
+  color: var(--texto-inverso);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9em;
+  transition: background-color 0.3s, opacity 0.3s;
+}
+
+.btn-curriculo:hover {
+  opacity: 0.85;
+}
 footer {
   background-color: var(--destaque);
   color: var(--texto-inverso);
