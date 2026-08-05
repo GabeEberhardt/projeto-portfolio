@@ -14,21 +14,21 @@
 }
 
 :root {
-  --fundo-principal: #f5f5f5;
-  --texto: #222222;
+  --fundo-principal: #f6f8f5;
+  --texto: #3c4238;
   --texto-inverso: #ffffff;
-  --destaque: #0077ff;
-  --destaque-inverso: #66bbff;
+  --destaque: #7c9473;
+  --destaque-inverso: #b3c6a8;
   --fundo-card: #ffffff;
 }
 
 body.escuro {
-  --fundo-principal: #222222;
-  --texto: #e0e0e0;
-  --texto-inverso: #333333;
-  --destaque: #ff5522;
-  --destaque-inverso: #a73917;
-  --fundo-card: #444444;
+  --fundo-principal: #1c211c;
+  --texto: #d6ddd2;
+  --texto-inverso: #1c211c;
+  --destaque: #9db894;
+  --destaque-inverso: #5c7554;
+  --fundo-card: #262c25;
 }
 
 body {
@@ -140,46 +140,59 @@ article h2 {
 }
 
 #skill-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 30px;
-}
-
-#skill-container .info {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  gap: 25px;
 }
 
-#skill-container .nome {
-  font-weight: bold;
-  color: var(--texto);
-}
-
-#skill-container .porcent {
-  font-weight: bold;
-  color: var(--destaque);
-}
-
-#skill-container .nivel {
-  font-size: 0.7em;
-  font-weight: normal;
+.skill-grupo h3 {
+  font-size: 0.85em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   color: var(--texto);
   opacity: 0.6;
-  letter-spacing: 0.03em;
+  margin-bottom: 12px;
 }
 
-#skill-container .barra {
-  width: 100%;
-  height: 8px;
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 20px;
   background-color: var(--fundo-principal);
-  border-radius: 4px;
+  border: 1.5px solid var(--destaque-inverso);
+  color: var(--texto);
+  font-size: 0.9em;
+  font-weight: 600;
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
 }
 
-#skill-container .progesso {
-  height: 100%;
-  background-color: var(--destaque-inverso);
-  border-radius: 4px;
+.tag-nivel {
+  font-size: 0.75em;
+  font-weight: normal;
+  opacity: 0.65;
+}
+
+.tag-nivel::before {
+  content: '· ';
+}
+
+.tag:hover {
+  background-color: var(--destaque);
+  border-color: var(--destaque);
+  color: var(--texto-inverso);
+  cursor: default;
+}
+
+.tag:hover .tag-nivel {
+  opacity: 0.85;
 }
 
 #formacao-container {
@@ -296,10 +309,6 @@ footer a:hover {
     grid-column: 3/4;
   }
   
-  
-  #skill-container {
-    grid-template-columns: 1fr 1fr;
-  }
 
   #projeto-container .projeto {
     flex-direction: row-reverse;
